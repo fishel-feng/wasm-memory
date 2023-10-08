@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        window.onload = () => {
+            function AllocateWasmSharedMemory(init, max) {
+              return new WebAssembly.Memory({
+                initial: init,
+                maximum: max,
+                shared: true,
+              });
+            }
+            try {
+
+              window.xxx = AllocateWasmSharedMemory(1024 * 10, 4096 * 10)
+              } catch (e) {
+                  console.error(e);
+                }
+          }
+        </script>
+    </body>
+</html>
